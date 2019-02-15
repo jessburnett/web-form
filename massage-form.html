@@ -15,6 +15,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <style>
+      body {
+        padding: 1rem;
+      }
       form{
         display: flex;
         flex-direction: column;
@@ -24,6 +27,18 @@
       input {
         margin: .5rem 0;
         padding-left: .5rem;
+        border:  none;
+        border-bottom: 1px solid grey;
+      }
+      .textarea-container {
+        padding-left: 6px;
+        padding-top: 7px;
+        margin:
+      }
+      textarea {
+        border: none;
+        border-bottom: 1px solid grey;
+        padding-top: 25px;
       }
     </style>
   </head> 
@@ -53,7 +68,7 @@
         <div class="text-align"><input type="checkbox" name="allergies-yes" value="allergies-yes"> Yes
         <input type="checkbox" name="allergies-no" value="allergies-no"> No
         </div>
-        <div><textarea name="allergies-text" placeholder="List known allergies here. Skip if none." style="height:90px"></textarea></div>
+        <div class="textarea-container"><textarea name="allergies-text" placeholder="List known allergies here. Skip if none." style="height:90px"></textarea></div>
       </div>
 
       <h5>Massage Info</h5>
@@ -67,7 +82,7 @@
         <div><textarea name="allergies-text" placeholder="List known allergies here. Skip if none." style="height:90px"></textarea></div>
       </div>
       <!-- Textarea (Message) -->
-      <div><textarea name="message" placeholder="Areas you'd like me to focus most" style="height:90px"></textarea></div>
+      <div class="textarea-container"><textarea name="message" placeholder="Areas you'd like me to focus most" style="height:90px"></textarea></div>
 
       <!-- Optional (hidden) fields -->
       <!-- Custom email Subject -->
