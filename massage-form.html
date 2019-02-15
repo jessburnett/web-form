@@ -14,31 +14,66 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <style>
+      form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        margin: .5rem 0;
+        padding-left: .5rem;
+      }
+    </style>
   </head> 
   <body> 
-    <form action="https://mailthis.to/solutions.frontend@gmail.com" method="POST" encType="multipart/form-data">
+    <form action="https://formspree.io/solutions.frontend@gmail.com" method="POST" encType="multipart/form-data">
       <h3>Massage Intake Form</h3>
       <!-- Name -->
-      <div class="d-flex p-2"><input type="email" name="name" placeholder="Your name"></div>
+      <h5>Your Info</h5>
+      <div><input type="text" name="name" placeholder="Your name"></div>
       <!-- Email -->
-      <div class="d-flex p-2"><input type="email" name="email" placeholder="you@mail.com"></div>
+      <div><input type="email" name="email" placeholder="you@mail.com"></div>
       <!-- Phone Number -->
-      <div class="d-flex p-2"><input type="text" name="phone" placeholder="+1 (255) 555-5555"></div>
+      <div><input type="text" name="phone" placeholder="1 (255) 555-5555"></div>
+      <div><input type="text" name="address" placeholder="Your address"></div>
+      <div><input type="text" name="city" placeholder="Your city"></div>
+      <div><input type="text" name="state" placeholder="Your state"></div>
+      <div><input type="text" name="zip" placeholder="Your zip"></div>
+      </br>
+      <h5>Emergency Contact</h5>
+      <div><input type="text" name="emergency-name" placeholder="Emergency contact name"></div>
+      <div><input type="text" name="emergency-phone" placeholder="1 (255) 555-5555"></div>
+      <div><input type="text" name="relationship" placeholder="Relationship"></div>
+      </br>
+      <h5>Allergies</h5>
+      <div>
+        Do you have allergies?
+        <div class="text-align"><input type="checkbox" name="allergies-yes" value="allergies-yes"> Yes
+        <input type="checkbox" name="allergies-no" value="allergies-no"> No
+        </div>
+        <div><textarea name="allergies-text" placeholder="List known allergies here. Skip if none." style="height:90px"></textarea></div>
+      </div>
+
+      <h5>Massage Info</h5>
+      <div>
+        What pressure do you prefer?
+        <div class="text-align">
+          <input type="checkbox" name="pressure-light" value="pressure-light"> Light
+          <input type="checkbox" name="pressure-medium" value="pressure-medium"> Medium
+          <input type="checkbox" name="pressure-deep" value="pressure-deep"> Deep
+        </div>
+        <div><textarea name="allergies-text" placeholder="List known allergies here. Skip if none." style="height:90px"></textarea></div>
+      </div>
       <!-- Textarea (Message) -->
-      <div class="d-flex p-2"><textarea name="message" placeholder="Areas of more focus" style="height:90px"></textarea></div>
-      <!-- File attachments -->
+      <div><textarea name="message" placeholder="Areas you'd like me to focus most" style="height:90px"></textarea></div>
 
       <!-- Optional (hidden) fields -->
       <!-- Custom email Subject -->
       <input type="hidden" name="_subject" value="Massage Intake form submitted">
       <!-- Custom email ReplyTo Address -->
       <input type="hidden" name="_replyto" value="solutions.frontend@gmail.com">
-      <!-- Redirect to a page after recaptcha -->
-      {% comment %} <input type="hidden" name="_after" value="https://myhomepage.net/"> {% endcomment %}
-      <!-- Honeypot (to catch comment spam bots) -->
-      <input type="hidden" name="_honeypot" value="">
-      <!-- Apply a custom confirmation message on the second step -->
-      <input type="hidden" name="_confirmation" value="Thank you! Intake form received!">
 
       <!-- Submit Button -->
       <input type="submit" name="submit" value="Submit Form" class="btn btn-primary">
