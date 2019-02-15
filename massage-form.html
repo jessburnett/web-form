@@ -3,12 +3,45 @@
   <head> 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Massage Intake</title> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
   </head> 
   <body> 
-    <form action="https://mailthis.to/solutions.frontend.com" method="POST">
-      <input type="text" name="name" placeholder="Your name"> 
-      <input type="email" name="_replyto" placeholder="Your email"> 
-      <input type="submit" value="Send"> 
+    <form action="https://mailthis.to/solutions.frontend@gmail.com" method="POST" encType="multipart/form-data">
+      <h3>Massage Intake Form</h3>
+      <!-- Name -->
+      <div class="d-flex p-2"><input type="email" name="name" placeholder="Your name"></div>
+      <!-- Email -->
+      <div class="d-flex p-2"><input type="email" name="email" placeholder="you@mail.com"></div>
+      <!-- Phone Number -->
+      <div class="d-flex p-2"><input type="text" name="phone" placeholder="+1 (255) 555-5555"></div>
+      <!-- Textarea (Message) -->
+      <div class="d-flex p-2"><textarea name="message" placeholder="Areas of more focus" style="height:90px"></textarea></div>
+      <!-- File attachments -->
+
+      <!-- Optional (hidden) fields -->
+      <!-- Custom email Subject -->
+      <input type="hidden" name="_subject" value="Massage Intake form submitted">
+      <!-- Custom email ReplyTo Address -->
+      <input type="hidden" name="_replyto" value="solutions.frontend@gmail.com">
+      <!-- Redirect to a page after recaptcha -->
+      {% comment %} <input type="hidden" name="_after" value="https://myhomepage.net/"> {% endcomment %}
+      <!-- Honeypot (to catch comment spam bots) -->
+      <input type="hidden" name="_honeypot" value="">
+      <!-- Apply a custom confirmation message on the second step -->
+      <input type="hidden" name="_confirmation" value="Thank you! Intake form received!">
+
+      <!-- Submit Button -->
+      <input type="submit" name="submit" value="Submit Form" class="btn btn-primary">
     </form>
   </body> 
 </html>
